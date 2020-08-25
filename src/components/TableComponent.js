@@ -74,7 +74,8 @@ class TableComponent extends Component {
   )
 
 
-
+// <ExtColumn flex={1} text="password" dataIndex="password" width="150"></ExtColumn>
+// <ExtColumn flex={1} text="role_id" dataIndex="role_id" width="150"></ExtColumn>
   render() {
     return (
      <React.Fragment>
@@ -92,23 +93,18 @@ class TableComponent extends Component {
         
         <ExtColumn text="link" dataIndex="id" encodeHtml="false" 
         // renderer={function(v) {return <a href="https://edu.advance24.online/user/id='+ v.toString() +'">Ссылка</a>;}}       
-        renderer={function(v) {return <ButtonComponent func={v}/>;}}
-
+        renderer={function(v) {return <ButtonComponent id={v}/>;}}></ExtColumn>
+        <ExtColumn flex={1} text="Имя" dataIndex="name" width="150"></ExtColumn>
+        <ExtColumn flex={1} text="Почта" dataIndex="email" width="150"></ExtColumn>
+        <ExtColumn flex={1} text="Телефон" dataIndex="phone" width="150"></ExtColumn>
         
-
         
-        ></ExtColumn>
-        <ExtColumn flex={1} text="name" dataIndex="name" width="150"></ExtColumn>
-        <ExtColumn flex={1} text="email" dataIndex="email" width="150"></ExtColumn>
-        <ExtColumn flex={1} text="phone" dataIndex="phone" width="150"></ExtColumn>
-        <ExtColumn flex={1} text="password" dataIndex="password" width="150"></ExtColumn>
-        <ExtColumn flex={1} text="role_id" dataIndex="role_id" width="150"></ExtColumn>
-        <ExtColumn flex={1} text="parent_name" dataIndex="parent_name" width="150"></ExtColumn>
-        <ExtColumn flex={1} text="parent_phone" dataIndex="parent_phone" width="150"></ExtColumn>
-        <ExtColumn flex={1} text="parent_email" dataIndex="parent_email" width="150"></ExtColumn>
-        <ExtColumn flex={1} text="registered_as" dataIndex="registered_as" width="150"></ExtColumn>
-        <ExtColumn flex={1} text="age" dataIndex="age" width="150"></ExtColumn>
-        <ExtColumn flex={1} text="gender" dataIndex="gender" width="150"></ExtColumn>
+        <ExtColumn flex={1} text="Имя родителя" dataIndex="parent_name" width="150"></ExtColumn>
+        <ExtColumn flex={1} text="Тел. родителя" dataIndex="parent_phone" width="150"></ExtColumn>
+        <ExtColumn flex={1} text="Почта родителя" dataIndex="parent_email" width="150"></ExtColumn>
+        <ExtColumn flex={1} text="Зарегистрирован как" dataIndex="registered_as" width="150"></ExtColumn>
+        <ExtColumn flex={1} text="Возраст" dataIndex="age" width="150"></ExtColumn>
+        <ExtColumn flex={1} text="Пол" dataIndex="gender" width="150"></ExtColumn>
       </ExtGrid>
     </React.Fragment>
     )
