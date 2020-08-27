@@ -55,27 +55,10 @@ class TableComponent extends Component {
   }
 
 
-
-  output(){
-    // console.log("gg");
-  }
   extReactDidMount = detail => {
-    // console.log(detail)
-    // this.grid.cmp.setStore(this.store);
-    // this.store.add({ "id": 12, "name": "Kolya", "email": "artyom@mail.ru", "phone":"89111950123","password":"123","role_id":"user","parent_name":"Artyom","parent_phone":"89110011222","parent_email":"papa@mail.ru","registered_as":"parent","age":"21","gender":"male"});
-
+    console.log(detail);
   }
 
-
-  renderSign = (format, value) => (  
-    <span style={{ color: value > 0 ? 'green' : value < 0 ? 'red' : ''}}>
-        {Ext.util.Format.number(value, format)}
-    </span>
-  )
-
-
-// <ExtColumn flex={1} text="password" dataIndex="password" width="150"></ExtColumn>
-// <ExtColumn flex={1} text="role_id" dataIndex="role_id" width="150"></ExtColumn>
   render() {
     return (
      <React.Fragment>
@@ -87,13 +70,9 @@ class TableComponent extends Component {
         store={ this.store }
         onReady={ this.extReactDidMount }
         plugins={['pagingtoolbar']}
-
-
       >
         
-        <ExtColumn text="link" dataIndex="id" encodeHtml="false" 
-        // renderer={function(v) {return <a href="https://edu.advance24.online/user/id='+ v.toString() +'">Ссылка</a>;}}       
-        renderer={function(v) {return <ButtonComponent id={v}/>;}}></ExtColumn>
+        <ExtColumn text="link" dataIndex="id" width="140" renderer={function(v) {return <ButtonComponent id={v}/>;}}></ExtColumn>
         <ExtColumn flex={1} text="Имя" dataIndex="name" width="150"></ExtColumn>
         <ExtColumn flex={1} text="Почта" dataIndex="email" width="150"></ExtColumn>
         <ExtColumn flex={1} text="Телефон" dataIndex="phone" width="150"></ExtColumn>

@@ -1,8 +1,6 @@
 import React from 'react';
 import ExtReactDOM from '@sencha/ext-react-modern';
 import './index.css';
-
-
 import TemplateComponent from './template/TemplateComponent';
 import * as serviceWorker from './serviceWorker';
 
